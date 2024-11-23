@@ -1,0 +1,19 @@
+<header class="header">
+  <h1 class="header-title">Oferendas de Novembro de 2024</h1>
+  <ul class="header-filter">
+    <button
+      class="header-button"
+      [ngClass]="{ selected: viewMode === 'offer' }"
+      (click)="onChangeViewMode('offer')"
+    >
+      Oferendas
+    </button>
+    <button
+      class="header-button"
+      [ngClass]="{ selected: viewMode === 'bonus' }"
+      (click)="onChangeViewMode('bonus')"
+    >
+      Bônus
+    </button>
+  </ul>
+</header>

@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 12px;
+  background-color: #212121;
+  border-bottom: 1px solid #303030;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: white;
+}
+
+.header-filter {
+  border: 1px solid #303030;
+  display: flex;
+  width: max-content;
+  border-radius: 4px;
+  background-color: #2b2b2b;
+  box-shadow: transparent 0px 0px 0px 1px inset;
+}
+
+.header-button {
+  height: 32px;
+  cursor: pointer;
+  padding: 0px 12px;
+  background-color: #2b2b2b;
+  border-radius: 4px;
+  box-shadow: #303030 0px 0px 0px 1px inset;
+  border: none;
+  color: #a6a6a6;
+}
+
+.header-button:hover,
+.selected:hover {
+  color: #ffffff;
+}
+.selected {
+  background-color: #212121;
+  color: #ffffff;
+}

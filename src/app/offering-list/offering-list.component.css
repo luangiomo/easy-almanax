@@ -1,0 +1,67 @@
+.offering-item {
+  display: flex;
+  flex-basis: 1;
+  padding-block: 8px;
+  border-bottom: 1px solid #303030;
+}
+
+.offering-item:hover {
+  background-color: #262626;
+}
+
+.offering-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  padding-top: 8px;
+  padding-right: 0;
+}
+
+.offering-image {
+  width: 60px;
+  height: 60px;
+}
+
+.offering-date {
+  padding: 8px 12px;
+  padding-top: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #a6a6a6;
+}
+
+.offering-title {
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: white;
+}
+
+.offering-bonus {
+  padding: 8px 12px;
+  padding-top: 0;
+  font-size: 12px;
+}
+
+.offering-bonus-name {
+  margin-block: 4px;
+  color: #a6a6a6;
+}
+
+.offering-bonus-description {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  line-height: 1.6;
+  color: white;
+}
+
+.offering-rewards {
+  display: flex;
+  padding: 8px 12px;
+  line-height: 1.6;
+  gap: 16px;
+  color: #a6a6a6;
+}
