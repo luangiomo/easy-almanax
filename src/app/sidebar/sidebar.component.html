@@ -1,0 +1,15 @@
+<aside class="sidebar">
+  <h2 class="sidebar-title">Filtrar por</h2>
+  <ul class="sidebar-list">
+    <li class="sidebar-item selected">Oferendas</li>
+    <li class="sidebar-item">Itens</li>
+    <li class="sidebar-item">Bônus</li>
+  </ul>
+  <span class="sidebar-divider"></span>
+  <h2 class="sidebar-title">Próximos 10 dias</h2>
+  <ul class="sidebar-list">
+    <li class="sidebar-item" *ngFor="let offer of nextTenOffers">
+      {{ offer }}
+    </li>
+  </ul>
+</aside>
