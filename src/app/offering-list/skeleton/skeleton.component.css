@@ -2,15 +2,6 @@
   animation: skeleton-loading 1s linear infinite alternate;
 }
 
-@keyframes skeleton-loading {
-  0% {
-    background-color: #303030a5;
-  }
-  100% {
-    background-color: #3b3b3b;
-  }
-}
-
 .skeleton {
   display: flex;
   flex-direction: column;
@@ -43,11 +34,11 @@
 }
 
 .s-small {
-  width: 40%;
-}
-.s-medium {
   width: 60%;
 }
-.s-large {
+.s-medium {
   width: 80%;
+}
+.s-large {
+  width: 100%;
 }

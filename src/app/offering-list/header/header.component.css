@@ -3,10 +3,19 @@
   position: sticky;
   top: 0;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: 24px;
   padding: 24px 12px;
   background-color: #212121;
   border-bottom: 1px solid #303030;
+}
+
+.header-label {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #a6a6a6;
+  margin-bottom: 4px;
 }
 
 .header-title {

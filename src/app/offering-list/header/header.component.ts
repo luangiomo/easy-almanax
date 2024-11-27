@@ -7,7 +7,15 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
   viewMode: 'offer' | 'bonus' = 'offer';
+  daysRange: 7 | 15 | 30 = 15;
+
   @Output() viewModeEvent = new EventEmitter<'offer' | 'bonus'>();
+  @Output() daysRangeEvent = new EventEmitter<7 | 15 | 30>();
+
+  onChangeDaysRange(range: 7 | 15 | 30) {
+    this.daysRange = range;
+    this.daysRangeEvent.emit(range);
+  }
   onChangeViewMode(mode: 'offer' | 'bonus') {
     this.viewMode = mode;
     this.viewModeEvent.emit(mode);

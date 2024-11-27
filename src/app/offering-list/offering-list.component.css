@@ -65,3 +65,20 @@
   gap: 16px;
   color: #a6a6a6;
 }
+
+.offering-badge {
+  background-color: #dc2626;
+  color: white;
+  display: inline-flex;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.offering-today {
+  animation: skeleton-loading 2s linear infinite alternate;
+}

@@ -1,8 +1,5 @@
 <main>
   <div class="content">
-    <app-skeleton *ngIf="loading; else content" />
-    <ng-template #content>
-      <app-offering-list [offering]="offering" />
-    </ng-template>
+    <app-offering-list />
   </div>
 </main>

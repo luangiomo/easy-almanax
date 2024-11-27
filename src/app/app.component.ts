@@ -13,23 +13,15 @@ export class AppComponent {
   offering: Offering[] = [];
   nextTenOffers: string[] = [];
   today = new Date();
-  loading = false;
 
   constructor(private almanaxService: AlmanaxService) {
-    this.loading = true;
-    const [ActualMonth, ActualYear] = [
-      this.today.getMonth() + 1,
-      this.today.getFullYear(),
-    ];
-    this.almanaxService
-      .getAlmanaxByMounth(ActualMonth, ActualYear)
-      .then((res) => {
-        this.offering = res;
-        this.onGetTenOffer();
-      })
-      .finally(() => (this.loading = false));
-
-    this.almanaxService.getAlmanaxNextTenDays().then((res) => {});
+    const [ActualMonth, ActualYear] = [12, 2025];
+    // this.almanaxService
+    //   .getAlmanaxByMounth(ActualMonth, ActualYear)
+    //   .then((res) => {
+    //     this.offering = res;
+    //   })
+    //   .finally(() => ());
   }
 
   onGetTenOffer() {

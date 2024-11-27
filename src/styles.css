@@ -152,3 +152,12 @@ b {
 i {
   font-style: italic;
 }
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #303030a5;
+  }
+  100% {
+    background-color: #3b3b3b;
+  }
+}
