@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-header-offering-list',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent {
+export class HeaderComponentOfferingList {
   viewMode: 'offer' | 'bonus' = 'offer';
   daysRange: 7 | 15 | 30 = 15;
 

@@ -3,12 +3,18 @@
   position: sticky;
   top: 0;
   align-items: center;
+  z-index: 10;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
-  gap: 24px;
-  padding: 24px 12px;
+  gap: 12px;
+  padding-block: 24px;
   background-color: #212121;
   border-bottom: 1px solid #303030;
+}
+
+@media (max-width: 824px) {
+  .header {
+    padding-inline: 12px;
+  }
 }
 
 .header-label {

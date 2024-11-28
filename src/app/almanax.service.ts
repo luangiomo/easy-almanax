@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Offering } from './offering';
-import { formatNumber, separateDate } from './utils';
+import { formatNumber, splitDate } from './utils';
 
 @Injectable({
   providedIn: 'root',
@@ -47,10 +47,8 @@ export class AlmanaxService {
 
   async getAlmanaxByRangeOfDays(range: 7 | 15 | 30) {
     const offers = [];
-    const today = new Date().toLocaleString('en-US', {
-      timeZone: 'Europe/Paris',
-    }); // Hoje horario de Paris
-    const [year, month, day] = separateDate(new Date(today)); // [2024, 11, 27]
+    const today = new Date();
+    const [year, month, day] = splitDate(today); // [2024, 11, 27]
     const monthLenght = this.daysInMonth(Number(month), Number(year));
 
     offers.push({

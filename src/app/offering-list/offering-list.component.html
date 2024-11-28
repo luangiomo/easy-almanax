@@ -1,12 +1,12 @@
 <app-skeleton *ngIf="loading; else content" />
 <ng-template #content>
-  <app-header
+  <app-header-offering-list
     (viewModeEvent)="onChangeViewMode($event)"
     (daysRangeEvent)="onChangeDaysRange($event)"
   />
   <ul class="offering-list">
     <li
-      class="offering-item offering-today"
+      class="offering-list-item offering-today"
       [ngClass]="{ 'offering-today': offer.date === today }"
       *ngFor="let offer of filteredOfferings"
     >
@@ -18,16 +18,18 @@
           {{ offer.date | date : "dd/MM/yy" }}
         </h2>
         <span class="offering-badge" *ngIf="offer.date === today">hoje</span>
-        <img
-          class="offering-image"
-          *ngIf="viewMode === 'offer'"
-          [src]="offer.item.imageURL"
-          [alt]="offer.item.name"
-        />
+        <div class="offering-item" *ngIf="viewMode === 'offer'">
+          <img
+            class="offering-image"
+            [src]="offer.item.imageURL"
+            [alt]="offer.item.name"
+          />
+          <p class="offering-quantity">{{ offer.quantity }}</p>
+        </div>
       </div>
       <div>
         <h2 class="offering-title" *ngIf="viewMode === 'offer'">
-          {{ offer.quantity }}x {{ offer.item.name }}
+          {{ offer.item.name }}
         </h2>
         <div class="offering-bonus">
           <p

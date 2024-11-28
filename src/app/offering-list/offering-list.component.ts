@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Offering } from '../offering';
-import { separateDate } from '../utils';
+import { splitDate } from '../utils';
 import { AlmanaxService } from '../almanax.service';
 
 @Component({
@@ -27,11 +27,8 @@ export class OfferingListComponent {
         this.loading = false;
         this.onChangeDaysRange(this.daysRange);
       });
-    let parisDate = new Date().toLocaleString('en-US', {
-      timeZone: 'Europe/Paris',
-    });
 
-    const [year, month, day] = separateDate(new Date(parisDate));
+    const [year, month, day] = splitDate(new Date());
     this.today = `${month}/${day}/${year}`;
   }
 
