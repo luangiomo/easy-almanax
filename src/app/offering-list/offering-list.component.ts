@@ -27,11 +27,11 @@ export class OfferingListComponent {
         this.loading = false;
         this.onChangeDaysRange(this.daysRange);
       });
-    let teste = new Date().toLocaleString('pt-BR', {
+    let parisDate = new Date().toLocaleString('en-US', {
       timeZone: 'Europe/Paris',
     });
 
-    const [year, month, day] = separateDate(new Date());
+    const [year, month, day] = separateDate(new Date(parisDate));
     this.today = `${month}/${day}/${year}`;
   }
 

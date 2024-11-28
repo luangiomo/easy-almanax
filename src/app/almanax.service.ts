@@ -48,8 +48,7 @@ export class AlmanaxService {
   async getAlmanaxByRangeOfDays(range: 7 | 15 | 30) {
     const offers = [];
     const today = new Date(); // Hoje
-    // console.log(new Date('Dec 23 2024'));
-    const [year, month, day] = separateDate(today);
+    const [year, month, day] = separateDate(today); // [2024, 11, 27]
     const monthLenght = this.daysInMonth(Number(month), Number(year));
 
     offers.push({
@@ -85,14 +84,6 @@ export class AlmanaxService {
         });
       }
     }
-
-    console.log(offers);
-
-    //  const fullMonth = [];
-
-    //  for (let i = 1; i <= this.daysInMonth(month, year); i++) {
-    //    fullMonth.push(i);
-    //  }
 
     const responses = Promise.all(
       offers.map(async (date) => {

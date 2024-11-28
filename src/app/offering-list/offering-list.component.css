@@ -13,9 +13,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 12px;
   padding-top: 8px;
-  padding-right: 0;
+  padding-bottom: 12px;
 }
 
 .offering-image {
@@ -42,6 +41,7 @@
 
 .offering-bonus {
   padding: 8px 12px;
+  padding-right: 24px;
   padding-top: 0;
   font-size: 12px;
 }
