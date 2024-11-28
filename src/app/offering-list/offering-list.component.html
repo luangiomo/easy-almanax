@@ -34,7 +34,7 @@
             class="offering-bonus-name"
             [ngStyle]="{ 'margin-top': viewMode === 'offer' ? '4px' : '8px' }"
           >
-            Bônus - {{ offer.bonus.name }}:
+            Bônus - <b>{{ offer.bonus.name }}: </b>
           </p>
           <p
             class="offering-bonus-description"
@@ -42,11 +42,11 @@
           ></p>
         </div>
         <div class="offering-rewards" *ngIf="viewMode === 'offer'">
-          <p>21.990 <b>₭</b></p>
+          <p>{{ offer.reward.kamas }} <b>₭</b></p>
           <p>
-            2.500.000 <i class="italic"><b>XP</b></i>
+            {{ offer.reward.xp }} <i class="italic"><b>XP</b></i>
           </p>
-          <p>17x Almaficha</p>
+          <p>{{ offer.reward.almatokens }}x Almaficha</p>
         </div>
       </div>
     </li>

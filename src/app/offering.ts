@@ -9,4 +9,9 @@ export type Offering = {
     desc: string;
     name: string;
   };
+  reward: {
+    kamas: string;
+    xp: string;
+    almatokens: number;
+  };
 };

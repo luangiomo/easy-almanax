@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Offering } from './offering';
-import { separateDate } from './utils';
+import { formatNumber, separateDate } from './utils';
 
 @Injectable({
   providedIn: 'root',
@@ -47,8 +47,10 @@ export class AlmanaxService {
 
   async getAlmanaxByRangeOfDays(range: 7 | 15 | 30) {
     const offers = [];
-    const today = new Date(); // Hoje
-    const [year, month, day] = separateDate(today); // [2024, 11, 27]
+    const today = new Date().toLocaleString('en-US', {
+      timeZone: 'Europe/Paris',
+    }); // Hoje horario de Paris
+    const [year, month, day] = separateDate(new Date(today)); // [2024, 11, 27]
     const monthLenght = this.daysInMonth(Number(month), Number(year));
 
     offers.push({
@@ -114,6 +116,7 @@ export class AlmanaxService {
     const quantity =
       quest.data[0].steps[0].objectives[0].need.generated.quantities[0];
     const item = await this.getItemData(itemId);
+    const kamasRatio = quest.data[0].steps[0].rewards.at(-1).kamasRatio;
 
     const offering: Offering = {
       date: `${month}/${day < 10 ? '0' + day : day}/${year}`,
@@ -125,6 +128,11 @@ export class AlmanaxService {
       bonus: {
         desc: almanax.desc.pt,
         name: almanax.name.pt,
+      },
+      reward: {
+        kamas: formatNumber(Math.trunc(21990 * kamasRatio)),
+        xp: formatNumber(2500000),
+        almatokens: 17,
       },
     };
     return offering;
