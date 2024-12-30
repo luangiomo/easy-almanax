@@ -1,0 +1,14 @@
+<section class="calendar">
+  <header class="calendar-header">
+    <button class="calendar-button disabled"><</button>
+    2024
+    <button class="calendar-button">></button>
+  </header>
+  <ul class="calendar-months">
+    <li *ngFor="let m of months; index as i">
+      <button class="calendar-month" [ngClass]="{ selected: i === month }">
+        {{ m }}
+      </button>
+    </li>
+  </ul>
+</section>

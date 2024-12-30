@@ -8,26 +8,6 @@ import { formatNumber, splitDate } from './utils';
 export class AlmanaxService {
   private readonly API_URL = 'https://api.dofusdb.fr';
 
-  constructor() {}
-
-  async getTodayAlmanax() {
-    const [month, day, year] = new Date()
-      .toISOString()
-      .split('T')[0]
-      .split('-'); // [03, 28, 2024]
-    const res = await fetch(
-      `${this.API_URL}/almanax?date=${month}/${day}/${year}`
-    );
-    return await res.json();
-  }
-
-  async getAlmanaxData(month: number, day: number, year: number) {
-    const res = await fetch(
-      `${this.API_URL}/almanax?date=${month}/${day}/${year}`
-    );
-    return await res.json();
-  }
-
   async getAlmanaxByMounth(month: number, year: number) {
     const fullMonth = [];
 
@@ -107,6 +87,34 @@ export class AlmanaxService {
     return await res.json();
   }
 
+  private async getAlmanaxData(month: number, day: number, year: number) {
+    const res = await fetch(
+      `${this.API_URL}/almanax?date=${month}/${day}/${year}`
+    );
+    return await res.json();
+  }
+
+  private async getRewards(quest: any, level: number) {
+    const kamas = 21990;
+    const experience = [
+      36197, 96049, 195421, 343913, 551125, 826657, 1180109, 1621081, 2159173,
+      2500000,
+    ];
+    const rewards = await quest.data[0].steps[0].rewards.at(level);
+
+    const kamasRatioByLevel = rewards.kamasRatio;
+    const experienceByLevel = experience.at(level)!!;
+    const tokensByLevel = rewards.itemsReward[0][1];
+
+    const reward = {
+      kamas: formatNumber(Math.trunc(kamas * kamasRatioByLevel)),
+      xp: formatNumber(experienceByLevel),
+      almatokens: tokensByLevel,
+    };
+
+    return reward;
+  }
+
   async build(month: number, day: number, year: number) {
     const almanax = await this.getAlmanaxData(month, day, year);
     const quest = await this.getQuestData(almanax.id);
@@ -114,24 +122,19 @@ export class AlmanaxService {
     const quantity =
       quest.data[0].steps[0].objectives[0].need.generated.quantities[0];
     const item = await this.getItemData(itemId);
-    const kamasRatio = quest.data[0].steps[0].rewards.at(-1).kamasRatio;
-
+    const reward = await this.getRewards(quest, 0);
     const offering: Offering = {
       date: `${month}/${day < 10 ? '0' + day : day}/${year}`,
       item: {
-        name: item.name.pt,
+        name: item.name['en'],
         imageURL: item.img,
       },
       quantity: quantity,
       bonus: {
-        desc: almanax.desc.pt,
-        name: almanax.name.pt,
+        desc: almanax.desc['en'],
+        name: almanax.name['en'],
       },
-      reward: {
-        kamas: formatNumber(Math.trunc(21990 * kamasRatio)),
-        xp: formatNumber(2500000),
-        almatokens: 17,
-      },
+      reward: reward,
     };
     return offering;
   }

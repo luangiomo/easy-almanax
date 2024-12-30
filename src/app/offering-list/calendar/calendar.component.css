@@ -1,0 +1,63 @@
+.calendar {
+  width: 168px;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  padding-bottom: 4px;
+  font-weight: 600;
+  color: white;
+}
+
+.calendar-button {
+  border: none;
+  cursor: pointer;
+  height: 24px;
+  background-color: #212121;
+  padding-inline: 12px;
+  border-radius: 4px;
+  color: white;
+}
+.calendar-button:hover {
+  background-color: #2b2b2b;
+}
+
+.disabled {
+  opacity: 0.25;
+}
+.disabled:hover {
+  cursor: not-allowed;
+}
+
+.calendar-months {
+  padding: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  list-style: none;
+}
+
+.calendar-month {
+  border: none;
+  cursor: pointer;
+  width: 48px;
+  height: 32px;
+  font-weight: 600;
+  padding-block: 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  box-shadow: #303030 0px 0px 0px 1px inset;
+  background-color: #2b2b2b;
+  color: #8e8e8e;
+}
+.calendar-month:hover {
+  color: white;
+}
+
+.selected {
+  background-color: #212121;
+  color: #ffffff;
+}

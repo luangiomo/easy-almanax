@@ -1,6 +1,25 @@
 <header class="header">
   <div>
-    <!-- <p class="header-label">Mostrar próximos:</p> -->
+    <p class="header-label">Visualizar:</p>
+    <ul class="header-filter">
+      <button
+        class="header-button"
+        [ngClass]="{ selected: viewMode === 'offer' }"
+        (click)="onChangeViewMode('offer')"
+      >
+        Oferendas
+      </button>
+      <button
+        class="header-button"
+        [ngClass]="{ selected: viewMode === 'bonus' }"
+        (click)="onChangeViewMode('bonus')"
+      >
+        Bônus
+      </button>
+    </ul>
+  </div>
+  <div>
+    <p class="header-label">Mostrar próximos:</p>
     <ul class="header-filter">
       <button
         class="header-button"
@@ -26,21 +45,16 @@
     </ul>
   </div>
   <div>
-    <!-- <p class="header-label">Visualizar:</p> -->
+    <p class="header-label">Contas:</p>
     <ul class="header-filter">
-      <button
-        class="header-button"
-        [ngClass]="{ selected: viewMode === 'offer' }"
-        (click)="onChangeViewMode('offer')"
-      >
-        Oferendas
+      <button class="header-button" (click)="onDecreaseAccontNumber()">
+        -
       </button>
-      <button
-        class="header-button"
-        [ngClass]="{ selected: viewMode === 'bonus' }"
-        (click)="onChangeViewMode('bonus')"
-      >
-        Bônus
+      <button class="header-button selected">
+        {{ accontsNumber }}
+      </button>
+      <button class="header-button" (click)="onIncreaseAccontNumber()">
+        +
       </button>
     </ul>
   </div>

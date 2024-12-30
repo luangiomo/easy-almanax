@@ -1,10 +1,10 @@
 export type Offering = {
   date: string;
+  quantity: number;
   item: {
     name: string;
     imageURL: string;
   };
-  quantity: number;
   bonus: {
     desc: string;
     name: string;

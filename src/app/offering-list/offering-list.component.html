@@ -3,6 +3,7 @@
   <app-header-offering-list
     (viewModeEvent)="onChangeViewMode($event)"
     (daysRangeEvent)="onChangeDaysRange($event)"
+    (accontsNumberEvent)="onChangeAccontsNumber($event)"
   />
   <ul class="offering-list">
     <li
@@ -17,18 +18,25 @@
         >
           {{ offer.date | date : "dd/MM/yy" }}
         </h2>
-        <span class="offering-badge" *ngIf="offer.date === today">hoje</span>
         <div class="offering-item" *ngIf="viewMode === 'offer'">
           <img
             class="offering-image"
             [src]="offer.item.imageURL"
             [alt]="offer.item.name"
           />
-          <p class="offering-quantity">{{ offer.quantity }}</p>
+          <!-- <p class="offering-quantity">
+            {{ offer.quantity }}
+          </p> -->
         </div>
+        <span class="offering-badge" *ngIf="offer.date === today">hoje</span>
       </div>
       <div>
         <h2 class="offering-title" *ngIf="viewMode === 'offer'">
+          {{
+            accontsNumber > 1
+              ? offer.quantity + "x / " + accontsNumber * offer.quantity
+              : offer.quantity
+          }}x
           {{ offer.item.name }}
         </h2>
         <div class="offering-bonus">

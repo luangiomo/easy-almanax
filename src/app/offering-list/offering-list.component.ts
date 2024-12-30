@@ -13,6 +13,7 @@ export class OfferingListComponent {
   filteredOfferings: Offering[] = [];
   viewMode: 'offer' | 'bonus' = 'offer';
   daysRange: 7 | 15 | 30 = 15;
+  accontsNumber: number = 1;
   loading = false;
   today = '';
 
@@ -39,5 +40,8 @@ export class OfferingListComponent {
   onChangeDaysRange(range: 7 | 15 | 30) {
     this.daysRange = range;
     this.filteredOfferings = this.offerings.slice(0, range + 1);
+  }
+  onChangeAccontsNumber(accontsNumber: number) {
+    this.accontsNumber = accontsNumber;
   }
 }
