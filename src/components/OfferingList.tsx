@@ -7,6 +7,7 @@ import { getDaysInMonth } from "../utils/getDaysInMonth";
 import { getParisTime } from "../utils/getParisTime";
 import Skeleton from "./Skeleton";
 import Card from "./ui/Card";
+import { formatDate } from "../utils/formatDate";
 
 function OfferingList() {
   const { t, i18n } = useTranslation();
@@ -92,7 +93,10 @@ function OfferingList() {
                   }
                 </h2>
                 <h2 className="text-sm text-[#A6A6A6] font-semibold mr-2">
-                  {offer.data?.date}
+                  {formatDate(
+                    offer.data?.date,
+                    i18n.resolvedLanguage ? i18n.resolvedLanguage : "en"
+                  )}
                 </h2>
                 {/* <span className="w-fit text-[10px] py-0.5 px-1 inline-block uppercase font-bold rounded whitespace-nowrap text-green-800 bg-green-300">
             Copiado!
