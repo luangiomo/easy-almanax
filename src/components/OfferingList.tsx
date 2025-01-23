@@ -1,5 +1,5 @@
 import { useQueries } from "@tanstack/react-query";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { getAlmanaxOfferByDate } from "../api/offers";
 import { OfferingContext } from "../contexts/OfferingContext";
@@ -10,15 +10,6 @@ import Card from "./ui/Card";
 
 function OfferingList() {
   const { t, i18n } = useTranslation();
-  useEffect(() => {
-    const path = window.location.pathname.replace("/", ""); // Get the langueage in the path ex: pt,en,fr,es
-    if (path === "pt" || path === "en" || path === "fr" || path === "es") {
-      i18n.changeLanguage(path);
-      return;
-    }
-    i18n.changeLanguage("en");
-    window.location.href = `/en`;
-  }, [i18n]);
 
   const { currentMonth, userSettings } = useContext(OfferingContext);
   const { month, day, year } = getParisTime(); // [12,31,24]

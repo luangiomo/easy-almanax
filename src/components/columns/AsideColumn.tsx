@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import wppIcon from "../../assets/whatsapp-icon.png";
 import Card from "../ui/Card";
 
 function AsideColumn() {
@@ -9,11 +10,7 @@ function AsideColumn() {
       <div className="flex sticky top-20 flex-col gap-2">
         <Card>
           <div className="flex flex-row items-center lg:items-start lg:flex-col xl:flex-row gap-3">
-            <img
-              className="w-8 h-8"
-              src="src/assets/whatsapp-icon.svg"
-              alt="Your SVG"
-            />
+            <img className="w-8 h-8" src={wppIcon} alt="WhatsApp Icon" />
             <div className="flex-grow">
               <div className="flex flex-row lg:flex-col xl:flex-row gap-1 items-start  justify-between xl:items-center">
                 <h1 className="text-sm text-neutral-50 font-semibold">
