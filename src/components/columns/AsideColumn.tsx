@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import wppIcon from "../../assets/whatsapp-icon.png";
 import Card from "../ui/Card";
+import Credits from "../Credits";
 
 function AsideColumn() {
   const { t } = useTranslation();
@@ -32,6 +33,7 @@ function AsideColumn() {
             <span className="font-bold text-white">{"[-4,-24]"}</span>
           </p>
         </Card>
+        <Credits />
       </div>
     </aside>
   );

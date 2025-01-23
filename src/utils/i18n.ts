@@ -17,6 +17,10 @@ const resources = {
       botDescription: "Receive daily updates quickly and easily.",
       soon: "Soon",
       today: "Today",
+      credits: {
+        dev: "Developed by:",
+        api: "Information collected from the API:",
+      },
       months: {
         "01": "January",
         "02": "February",
@@ -58,6 +62,10 @@ const resources = {
       botDescription: "Receba atualizações diárias de forma rápida e prática.",
       soon: "Em breve",
       today: "Hoje",
+      credits: {
+        dev: "Desenvolvidor por:",
+        api: "Information collected from the API:",
+      },
       months: {
         "01": "Janeiro",
         "02": "Fevereiro",
@@ -100,6 +108,10 @@ const resources = {
         "Recevez des mises à jour quotidiennes rapidement et facilement.",
       soon: "Bientôt",
       today: "aujourd'hui",
+      credits: {
+        dev: "Développé par:",
+        api: "Informations collectées depuis l'API:",
+      },
       months: {
         "01": "Janvier",
         "02": "Février",
@@ -142,6 +154,10 @@ const resources = {
         "Recibe actualizaciones diarias de forma rápida y práctica.",
       soon: "Pronto",
       today: "hoy",
+      credits: {
+        dev: "Desarrollado por:",
+        api: "Información recopilada de la API:",
+      },
       months: {
         "01": "Enero",
         "02": "Febrero",
