@@ -3,7 +3,8 @@ Link: https://easyalmanax.vercel.app/pt
 EasyAlmanax – Nunca foi tão facil fazer o Almanax
 O EasyAlmanax é uma ferramenta essencial para jogadores de Dofus que desejam acompanhar de forma rápida e prática as missões diárias do Almanax. Com ele, você pode visualizar as próximas oferendas e os bônus diários sem precisar abrir o jogo ou procurar em fóruns.
 
-Funcionalidades Principais\**
+Funcionalidades Principais
+>
 ✅ Calendário de Oferendas – Veja a lista das próximas oferendas e prepare-se com antecedência para entregar os itens corretos ao NPC do Almanax.
 >
 ✅ Bônus Diários – Descubra quais serão os bônus oferecidos no jogo a cada dia para planejar suas atividades, como drops, experiência extra ou redução de custos.
