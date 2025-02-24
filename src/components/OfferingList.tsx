@@ -119,7 +119,7 @@ function OfferingList() {
                   dangerouslySetInnerHTML={{
                     __html: offer.data?.bonus.desc[
                       i18n.resolvedLanguage ? i18n.resolvedLanguage : "en"
-                    ].replace(/{{[^:]*::([^}]*)}}/, "$1"),
+                    ].replace(/\{\{monsterRace,\d+::(.*?)\}\}/g, "$1"),
                   }}
                 ></p>
               </span>
